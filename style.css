@@ -110,11 +110,42 @@ nav ul li a:hover{
     }
     nav ul li a:hover, nav ul li  a.active{
         background: none;
-        color: #0082e6;
+        color: #720e9e;
         cursor: pointer;
     }
     #check:checked ~ ul{
         left: 0;
+    }
+}
+@media  (max-width: 768px) {
+    .heading{
+        padding: 0px 20px;
+    }
+    .heading p{
+        font-size: 17px;
+        margin-bottom: 0px;
+    }
+    .content-about{
+        padding: 0px !important;
+        text-align: center;
+    }
+    .container-about{
+        padding: 0px !important;
+    }
+    .about-1{
+        padding: 20px 20px;
+        flex-direction: column;
+
+    }
+    .img-container img{
+        display: none !important; 
+    }
+    .about-content p{
+        font-size: 12px;
+        text-align: left;
+    }
+    .about-content{
+        font-size: 16px;
     }
 }
 .home{
@@ -152,7 +183,7 @@ nav ul li a:hover{
 }
 .btn-grad {background-image: linear-gradient(to right, #AA076B 0%, #61045F  51%, #AA076B  100%)}
 .btn-grad {
-   margin: 10px;
+   /* margin: 10px; */
    padding: 15px 45px;
    text-align: center;
    text-transform: uppercase;
@@ -195,9 +226,9 @@ nav ul li a:hover{
     transition: 0.6s;
 }
 .card:hover{
-    -webkit-box-shadow: 0px 10px 66px 1px rgba(0,0,0,0.5);
-    -moz-box-shadow: 0px 10px 66px 1px rgba(0,0,0,0.5);
-    box-shadow: 0px 10px 66px 1px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0px 10px 66px 1px rgba(225,225,225,0.5);
+    -moz-box-shadow: 0px 10px 66px 1px rgba(225,225,225,0.5);
+    box-shadow: 0px 10px 66px 1px rgba(225,225,225,0.5);
 }
 .card img{
     width: 100%;
@@ -235,67 +266,85 @@ nav ul li a:hover{
 }
 .about{
     min-height: 100vh;
-    display: table;
+    /* display: table; */
     width: 100%;
     height: 100%;
-    background: #50207F;
-    background: linear-gradient(90deg, #50207F, #8D47EB);
-    color: #000;
-    line-height: 1.6;
+    background: rgb(128,0,128);
+    background: linear-gradient(135deg, rgba(128,0,128,1) 0%, rgba(29,17,96,1) 0%, rgba(114,14,158,1) 65%);
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    color: #b7b7b7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-about{
+    padding: 2rem;
+}
+.heading{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin: 20px auto;
+}
+.heading h1{
+    font-size: clamp(36px, 50px, 50px);
+    color: #f0f0f0;
+    margin-bottom: 25px;
     position: relative;
-    font-family: sans-serif;
-    overflow: hidden;
 }
-.lines{
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  margin: auto;
-  width: 90vw;
-}
-.line{
+.heading h1::after{
+    content: "";
     position: absolute;
-    width: 1px;
-    height: 100%;
-    top: 0;
-    left: 50%;
-    background: rgba(255, 255, 255, 0.1);
-    overflow: hidden;
-}
-.line::after{
-    content: '';
-    display: block;
-    position: absolute;
-    height: 15vh;
     width: 100%;
-    top: -50%;
-    left: 0;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 75%, #ffffff 100%);
-    animation: drop 7s 0s infinite;
-    animation-fill-mode: forwards;
-    animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
-  
+    height: 4px;
+    display: block;
+    margin: 0 auto;
+    background-color: #61045F;
 }
-.line:nth-child(1){
-    margin-left: -25%
+.heading p{
+    font-size: 18px;
+    color: #b7b7bc;
+    margin-bottom: 35px;
 }
-.line:nth-child(1):after{
-    animation-delay: 2s
+.content-about{
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px 20px;
 }
-.line:nth-child(3){
-    margin-left: 25%
+.about-1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }
-.line:nth-child(3):after{
-    animation-delay: 2.5s
-  
+.img-container{
+    flex: 1;
+    margin-right: 40px;
+    overflow: hidden;
 }
-@keyframes drop{
-    0%{
-    top: -50%
-    }
-  100%{
-    top: 110%
-  }
+.img-container img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+    transition: .5s;
+    border-radius: 10px;
+}   
+.about-content{
+    flex: 1;
+}
+.about-content h2{
+    font-size: 23px;
+    margin-bottom: 15px;
+    color: #f0f0f0;
+}
+.about-content p{
+    font-size: 18px;
+    line-height: 1.5;
+    color: #f0f0f0;
+    letter-spacing: 1.2px;
+    margin-bottom: 10px;
 }
